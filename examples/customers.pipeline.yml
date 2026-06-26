@@ -1,0 +1,13 @@
+locale: en
+fail_fast: false
+rules:
+  - type: normalize_email
+    field: email
+  - type: presence
+    field: email
+  - type: format
+    field: email
+    pattern: "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
+  - type: default_value
+    field: name
+    default: empty

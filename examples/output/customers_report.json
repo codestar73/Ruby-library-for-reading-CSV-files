@@ -1,0 +1,148 @@
+{
+  "summary": {
+    "total": 6,
+    "valid": 3,
+    "invalid": 3,
+    "error_count": 3
+  },
+  "records": [
+    {
+      "row": 2,
+      "data": {
+        "name": "Alice",
+        "email": "alice@example.com"
+      },
+      "source_data": {
+        "name": "Alice",
+        "email": "alice@example.com"
+      },
+      "changed_fields": {
+      },
+      "valid": true,
+      "errors": [
+
+      ]
+    },
+    {
+      "row": 3,
+      "data": {
+        "name": "Bob",
+        "email": "bob@example.com"
+      },
+      "source_data": {
+        "name": "Bob",
+        "email": "  BOB@EXAMPLE.COM"
+      },
+      "changed_fields": {
+        "email": {
+          "from": "  BOB@EXAMPLE.COM",
+          "to": "bob@example.com"
+        }
+      },
+      "valid": true,
+      "errors": [
+
+      ]
+    },
+    {
+      "row": 4,
+      "data": {
+        "name": "empty",
+        "email": "carol@example.com"
+      },
+      "source_data": {
+        "name": null,
+        "email": "carol@example.com"
+      },
+      "changed_fields": {
+        "name": {
+          "from": null,
+          "to": "empty"
+        }
+      },
+      "valid": true,
+      "errors": [
+
+      ]
+    },
+    {
+      "row": 5,
+      "data": {
+        "name": "David",
+        "email": "not-an-email"
+      },
+      "source_data": {
+        "name": "David",
+        "email": "not-an-email"
+      },
+      "changed_fields": {
+      },
+      "valid": false,
+      "errors": [
+        {
+          "row": 5,
+          "field": "email",
+          "code": "invalid_format",
+          "message": "has an invalid format",
+          "value": "not-an-email",
+          "rule": "Format"
+        }
+      ]
+    },
+    {
+      "row": 6,
+      "data": {
+        "name": "Eve",
+        "email": null
+      },
+      "source_data": {
+        "name": "Eve",
+        "email": null
+      },
+      "changed_fields": {
+      },
+      "valid": false,
+      "errors": [
+        {
+          "row": 6,
+          "field": "email",
+          "code": "blank",
+          "message": "must be present",
+          "rule": "Presence"
+        }
+      ]
+    },
+    {
+      "row": 7,
+      "data": {
+        "name": "empty",
+        "email": "invalid@"
+      },
+      "source_data": {
+        "name": null,
+        "email": " INVALID@"
+      },
+      "changed_fields": {
+        "name": {
+          "from": null,
+          "to": "empty"
+        },
+        "email": {
+          "from": " INVALID@",
+          "to": "invalid@"
+        }
+      },
+      "valid": false,
+      "errors": [
+        {
+          "row": 7,
+          "field": "email",
+          "code": "invalid_format",
+          "message": "has an invalid format",
+          "value": "invalid@",
+          "rule": "Format"
+        }
+      ]
+    }
+  ]
+}

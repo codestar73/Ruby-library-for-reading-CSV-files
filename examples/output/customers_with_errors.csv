@@ -1,0 +1,7 @@
+name,email,errors
+Alice,alice@example.com,""
+Bob,bob@example.com,""
+empty,carol@example.com,""
+David,not-an-email,line 5: [Format] email: has an invalid format
+Eve,,line 6: [Presence] email: must be present
+empty,invalid@,line 7: [Format] email: has an invalid format
